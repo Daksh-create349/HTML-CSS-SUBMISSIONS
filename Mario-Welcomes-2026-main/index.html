@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-container">
+        <!-- HUD Section -->
+        <header class="hud">
+            <div class="hud-item">
+                <span class="label">MARIO</span>
+                <span class="value">000000</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">COINS</span>
+                <span class="value">x 00</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">WORLD</span>
+                <span class="value">1-1</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">TIME</span>
+                <span class="value">300</span>
+            </div>
+            <div class="hud-item audio-control" onclick="toggleAudio()">
+                <span class="label">MUSIC</span>
+                <span class="value" id="audio-status" style="color: #ff3333;">OFF 🔇</span>
+            </div>
+        </header>
+
+        <audio id="bgm" loop>
+            <source src="mario_theme.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Main Scene -->
+        <main class="level">
+            <!-- Decorative Background Elements -->
+            <div class="cloud cloud-small" style="top: 50px; left: 10%;"></div>
+            <div class="cloud cloud-medium" style="top: 80px; left: 50%;"></div>
+            <div class="cloud cloud-large" style="top: 30px; left: 80%;"></div>
+
+            <div class="hill-small" style="bottom: 64px; left: 0;"></div>
+            <div class="hill-large" style="bottom: 64px; left: 60%;"></div>
+
+            <div class="castle" style="bottom: 64px; left: 85%;"></div>
+
+            <!-- Content Area Styled as Blocks -->
+            <div class="content-wrapper">
+                <div class="logo-container">
+                    <div class="main-logo-text">
+                        <span class="letter c-red">S</span><span class="letter c-blue">U</span><span
+                            class="letter c-yellow">P</span><span class="letter c-blue">E</span><span
+                            class="letter c-green">R</span>
+                        <br>
+                        <span class="letter c-red">M</span><span class="letter c-blue">A</span><span
+                            class="letter c-yellow">R</span><span class="letter c-blue">I</span><span
+                            class="letter c-green">O</span>
+                    </div>
+                </div>
+
+                <!-- Bullet Bill Animation -->
+                <div class="bullet-bill-container">
+                    <div class="bullet-bill-css">
+                        <div class="bb-main"></div>
+                        <div class="bb-eye"></div>
+                        <div class="bb-arm"></div>
+                        <div class="bb-tail"></div>
+                        <div class="bb-flame"></div>
+                    </div>
+                </div>
+
+                <!-- Text Sequence -->
+                <div class="text-sequence">
+                    <p class="seq-line d-1">Welcome to 2026</p>
+                    <p class="seq-line d-2">Powering up...</p>
+                    <p class="seq-line d-3">Level 1-1 Loaded</p>
+                    <p class="seq-line d-4">Let's-a Go!</p>
+                </div>
+
+                <div class="platform-row">
+                    <div class="block question-block">?</div>
+                    <div class="block brick-block"></div>
+                    <div class="block brick-block"></div>
+                    <div class="block question-block">?</div>
+                    <div class="block brick-block"></div>
+                </div>
+
+                <div class="platform-row" style="margin-top: 100px;">
+                    <div class="pipe"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Dynamic Ground -->
+        <div class="ground"></div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('bgm');
+        const statusDisplay = document.getElementById('audio-status');
+        let isPlaying = false;
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                statusDisplay.textContent = "OFF 🔇";
+                statusDisplay.style.color = "#ff3333";
+            } else {
+                audio.play().then(() => {
+                    statusDisplay.textContent = "ON 🔊";
+                    statusDisplay.style.color = "#33cc33"; // Green for ON
+                }).catch(e => {
+                    console.log("Audio play failed:", e);
+                    alert("Audio play failed! Please interact with the document first (click anywhere) or check your browser settings.");
+                });
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
+</body>
+
+</html>

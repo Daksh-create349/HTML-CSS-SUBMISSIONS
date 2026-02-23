@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Culture</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* HEADER / NAVBAR */
+        header {
+            background-color: #3e2723;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO IMAGE */
+        .hero {
+            background-image: url("https://thumbs.dreamstime.com/b/espresso-coffee-cup-beans-vintage-table-90374872.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .hero h2 {
+            background-color: rgba(0,0,0,0.6);
+            padding: 15px 30px;
+            border-radius: 6px;
+        }
+
+        /* TWO SECTION ROW */
+        .row {
+            display: flex;
+            width: 85%;
+            margin: 40px auto;
+            gap: 30px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            width: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .box h2 {
+            color: #6f4e37;
+            margin-bottom: 10px;
+        }
+
+        /* BIG MENU */
+        .menu-section {
+            width: 85%;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .menu-section h2 {
+            text-align: center;
+            color: #6f4e37;
+            margin-bottom: 30px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .menu-box {
+            width: 250px;
+            margin: 15px;
+        }
+
+        .menu-box h3 {
+            border-bottom: 2px solid #6f4e37;
+            padding-bottom: 5px;
+            color: #6f4e37;
+        }
+
+        .menu-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-box li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #3e2723;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Coffee Culture</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">View</a>
+            <a href="#">Locations</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h2>Welcome to Coffee Culture</h2>
+    </div>
+
+    <!-- ABOUT + SPECIALITIES -->
+    <div class="row">
+        <div class="box">
+            <h2>About Us</h2>
+            <p>
+                Coffee Culture is a cozy place for true coffee lovers.
+                We serve freshly brewed coffee made from premium beans
+                in a warm and welcoming environment.
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Our Specialities</h2>
+            <ul>
+                <li>Freshly Roasted Coffee</li>
+                <li>Handcrafted Beverages</li>
+                <li>Premium Quality Beans</li>
+                <li>Relaxing Café Ambience</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- BIG MENU -->
+    <div class="menu-section">
+        <h2>Our Menu</h2>
+
+        <div class="menu">
+            <div class="menu-box">
+                <h3>Coffee</h3>
+                <ul>
+                    <li>Espresso</li>
+                    <li>Cappuccino</li>
+                    <li>Latte</li>
+                    <li>Americano</li>
+                </ul>
+            </div>
+
+            <div class="menu-box">
+                <h3>Tea</h3>
+                <ul>
+                    <li>Masala Tea</li>
+                    <li>Green Tea</li>
+                    <li>Black Tea</li>
+                    <li>Herbal Tea</li>
+                </ul>
+            </div>
+
+            <div class="menu-box">
+                <h3>Desserts</h3>
+                <ul>
+                    <li>Rasgulla</li>
+                    <li>Boondi ka ladoo</li>
+                    <li>Lassi</li>
+                    <li>Google placement</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Coffee Culture | All Rights Reserved
+    </footer>
+
+</body>
+</html>

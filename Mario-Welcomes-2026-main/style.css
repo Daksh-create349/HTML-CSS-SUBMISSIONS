@@ -1,0 +1,464 @@
+:root {
+    --sky-blue: #6b8cff;
+    --ground-color: #c84c0c;
+    --ground-details: #eebb33;
+    --brick-color: #b73229;
+    --brick-shadow: #000000;
+    --pipe-light: #85c22c;
+    --pipe-dark: #0f8502;
+    --pipe-border: #004400;
+    --cloud-white: #ffffff;
+    --cloud-shadow: #cceeff;
+    --text-color: #ffffff;
+    --hud-shadow: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--sky-blue);
+    font-family: 'Press Start 2P', cursive;
+    color: var(--text-color);
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HUD Styling */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px;
+    font-size: 20px;
+    text-shadow: 2px 2px var(--hud-shadow);
+    z-index: 10;
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.label {
+    font-size: 16px;
+}
+
+.audio-control {
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 5px;
+    transition: all 0.2s;
+}
+
+.audio-control:hover {
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Level Content */
+.level {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 64px;
+    /* Space for ground */
+}
+
+.content-wrapper {
+    text-align: center;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo and Animation */
+.logo-container {
+    position: relative;
+    margin-bottom: 60px;
+    display: inline-block;
+}
+
+.main-logo-text {
+    font-size: 60px;
+    line-height: 1.2;
+    text-shadow: 4px 4px 0px #000;
+    transform: skew(-5deg);
+}
+
+.letter {
+    display: inline-block;
+    position: relative;
+    /* 3D Block effect */
+    text-shadow:
+        1px 1px 0px #000,
+        2px 2px 0px #000,
+        3px 3px 0px #000,
+        4px 4px 0px #000,
+        5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.c-red {
+    color: #ff3333;
+}
+
+.c-blue {
+    color: #3366ff;
+}
+
+.c-yellow {
+    color: #ffcc00;
+}
+
+.c-green {
+    color: #33cc33;
+}
+
+/* Bullet Bill Animation */
+.bullet-bill-container {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    pointer-events: none;
+    z-index: 20;
+    overflow: hidden;
+    /* Ensure it starts off-screen */
+}
+
+.bullet-bill {
+    height: 60px;
+    image-rendering: pixelated;
+    position: absolute;
+    right: -100px;
+    /* Start off-screen right */
+    animation: fly-across 6s linear infinite;
+}
+
+.bullet-bill-css {
+    position: absolute;
+    right: -150px;
+    width: 60px;
+    height: 50px;
+    animation: fly-across 6s linear infinite;
+}
+
+/* Pure CSS Bullet Bill Parts */
+.bb-main {
+    width: 50px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 10px 20px 20px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid #555;
+    box-shadow: inset -5px -5px 0px #222;
+    z-index: 2;
+}
+
+.bb-eye {
+    width: 12px;
+    height: 6px;
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+    box-shadow: 2px 0px 0px 0px rgba(0, 0, 0, 0.5);
+    /* Angry brow effect */
+}
+
+.bb-arm {
+    width: 20px;
+    height: 8px;
+    background-color: #fff;
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    border-radius: 4px;
+    z-index: 1;
+    transform: rotate(20deg);
+    border: 2px solid #000;
+}
+
+.bb-tail {
+    width: 8px;
+    height: 30px;
+    background-color: #333;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-right: 2px solid #777;
+    z-index: 1;
+}
+
+.bb-flame {
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    position: absolute;
+    right: -5px;
+    top: 15px;
+    border-radius: 50%;
+    animation: flicker 0.1s infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0.8;
+    }
+}
+
+@keyframes fly-across {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-120vw);
+    }
+
+    /* Fly to far left */
+}
+
+/* Text Sequence Animation */
+.text-sequence {
+    margin-top: -20px;
+    margin-bottom: 40px;
+    min-height: 120px;
+    /* Reserve space */
+}
+
+.seq-line {
+    font-size: 18px;
+    margin: 10px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: reveal-text 0.5s forwards;
+    text-shadow: 2px 2px #000;
+    color: #ffd700;
+    /* Gold */
+}
+
+.d-1 {
+    animation-delay: 0.5s;
+}
+
+.d-2 {
+    animation-delay: 1.5s;
+}
+
+.d-3 {
+    animation-delay: 2.5s;
+}
+
+.d-4 {
+    animation-delay: 3.5s;
+}
+
+@keyframes reveal-text {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Blocks */
+.platform-row {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.block {
+    width: 60px;
+    height: 60px;
+    border: 4px solid black;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.brick-block {
+    background-color: var(--brick-color);
+    /* Simple CSS pattern for brick */
+    background-image:
+        linear-gradient(45deg, transparent 48%, rgba(0, 0, 0, 0.3) 50%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(0, 0, 0, 0.3) 50%, transparent 52%);
+    background-size: 10px 10px;
+}
+
+.question-block {
+    background-color: #f7ce3a;
+    color: #ae4700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.1s;
+    animation: pulse-shine 2s infinite;
+}
+
+.question-block:active {
+    transform: translateY(-10px);
+}
+
+.question-block:hover {
+    filter: brightness(1.1);
+}
+
+@keyframes pulse-shine {
+
+    0%,
+    100% {
+        background-color: #f7ce3a;
+    }
+
+    50% {
+        background-color: #ffe680;
+    }
+}
+
+/* Pipe */
+.pipe {
+    width: 100px;
+    height: 120px;
+    background: linear-gradient(to right,
+            var(--pipe-border) 4px,
+            var(--pipe-light) 4px,
+            var(--pipe-light) 15%,
+            var(--pipe-dark) 40%,
+            var(--pipe-dark) 80%,
+            var(--pipe-border) 95%);
+    border: 4px solid black;
+    border-bottom: none;
+    position: relative;
+    margin: 0 auto;
+}
+
+.pipe::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -10px;
+    width: 112px;
+    height: 30px;
+    background: linear-gradient(to right,
+            var(--pipe-border) 4px,
+            var(--pipe-light) 4px,
+            var(--pipe-light) 15%,
+            var(--pipe-dark) 40%,
+            var(--pipe-dark) 80%,
+            var(--pipe-border) 95%);
+    border: 4px solid black;
+}
+
+/* Ground */
+.ground {
+    height: 64px;
+    width: 100%;
+    background-color: var(--ground-color);
+    background-image:
+        repeating-linear-gradient(90deg,
+            var(--ground-details) 0px,
+            var(--ground-details) 20px,
+            black 22px,
+            black 24px,
+            var(--ground-color) 24px,
+            var(--ground-color) 46px,
+            black 48px,
+            black 50px);
+    background-size: 50px 64px;
+    border-top: 4px solid black;
+}
+
+/* Clouds (Simple CSS shapes) */
+.cloud {
+    background: var(--cloud-white);
+    position: absolute;
+    border-radius: 50px;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.cloud::after,
+.cloud::before {
+    content: '';
+    background: var(--cloud-white);
+    position: absolute;
+    border-radius: 50%;
+}
+
+.cloud-small {
+    width: 60px;
+    height: 20px;
+}
+
+.cloud-small::after {
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    left: 10px;
+}
+
+.cloud-medium {
+    width: 100px;
+    height: 30px;
+}
+
+.cloud-medium::after {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 15px;
+}
+
+.cloud-medium::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 40px;
+}
+
+.cloud-large {
+    width: 140px;
+    height: 40px;
+}
+
+.cloud-large::after {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 20px;
+}
+
+.cloud-large::before {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    left: 50px;
+}

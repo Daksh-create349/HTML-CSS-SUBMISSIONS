@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!-- Straight Line -->
+<svg width="300" height="150" style="border:1px solid black""">
+  <path d="M 20 80 L 280 80"
+        stroke="blue"
+        stroke-width="4"
+        fill="none" />
+</svg>
+
+<br><br>
+
+<!-- Rectangle -->
+<svg width="200" height="120" style="border:1px solid black">
+  <path d="M 20 20 L 180 20 L 180 100 L 20 100 Z"
+        stroke="black"
+        fill="lightblue"
+        stroke-width="2" />
+</svg>
+
+<br><br>
+
+<!-- Triangle -->
+<svg width="200" height="120" style="border:1px solid black">
+  <path d="M 100 20 L 180 100 L 20 100 Z"
+        fill="orange"
+        stroke="brown"
+        stroke-width="2" />
+</svg>
+
+<br><br>
+
+<!-- Curve -->
+<svg width="300" height="120" style="border:1px solid black">
+  <path d="M 20 80 Q 150 10 280 80"
+        stroke="green"
+        stroke-width="4"
+        fill="none" />
+</svg>
+
+<br><br>
+<!-- Android symbol-->
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <g fill="#A4C639">
+    
+    <g>
+      <path d="M 50,70 A 50,50 0 0 1 150,70 Z" />
+      
+      <line x1="72" y1="35" x2="60" y2="15" stroke="#A4C639" stroke-width="4" stroke-linecap="round" />
+      <line x1="128" y1="35" x2="140" y2="15" stroke="#A4C639" stroke-width="4" stroke-linecap="round" />
+    </g>
+
+    <rect x="50" y="75" width="100" height="85" rx="12" ry="12" />
+
+    <rect x="20" y="75" width="22" height="65" rx="11" ry="11" />
+    <rect x="158" y="75" width="22" height="65" rx="11" ry="11" />
+
+    <rect x="65" y="150" width="22" height="35" rx="11" ry="11" />
+    <rect x="113" y="150" width="22" height="35" rx="11" ry="11" />
+    
+  </g>
+
+  <circle cx="78" cy="45" r="5" fill="#FFFFFF" />
+  <circle cx="122" cy="45" r="5" fill="#FFFFFF" />
+
+</svg>
+
+<br><br>
+<!-- Six Pointer Star -->
+ 
+
+<svg width="220" height="220" style="border:1px solid black">
+  <path
+    d="M 110 20
+       L 180 170
+       L 20 80
+       L 200 80
+       L 40 170
+       L 110 20
+       Z"
+    fill="gold"
+    stroke="black"
+    stroke-width="3" />
+</svg>
+
+
+ <!-- CSS Gradient -->
+<div class="box"></div>
+
+<!-- SVG Gradient -->
+<div class="box"></div>
+
+<!-- SVG Linear Gradient -->
+<svg width="300" height="200">
+  <defs>
+    <linearGradient id="grad1">
+      <stop offset="0%" stop-color="red" />
+      <stop offset="100%" stop-color="yellow" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="100" cy="100" r="50" fill="url(#grad1)" />
+</svg>
+
+<svg width="300" height="120">
+  <defs>
+    <linearGradient id="pathGrad">
+      <stop offset="0%" stop-color="blue" />
+      <stop offset="100%" stop-color="green" />
+    </linearGradient>
+  </defs>
+
+  <path
+    d="M 100 20 L 180 100 L 20 100 Z"
+    stroke="url(#pathGrad)"
+    stroke-width="3"
+    fill="none" />
+</svg>
+
+<svg width="300" height="120" style="border:1px solid black">
+  <circle cx="30" cy="60" r="15" fill="red">
+    <animate
+      attributeName="cx"
+      from="30"
+      to="270"
+      dur="2s"
+      repeatCount="indefinite" />
+  </circle>
+</svg>
+
+<svg width="300" height="120" style="border:1px solid black">
+  <rect x="100" y="30" width="100" height="60" fill="blue">
+    <animate
+      attributeName="fill"
+      from="blue"
+      to="green"
+      dur="1.5s"
+      repeatCount="indefinite" />
+  </rect>
+</svg>
+
+<svg width="300" height="120" style="border:1px solid black">
+  <circle cx="150" cy="60" r="20" fill="purple">
+    <animateTransform
+      attributeName="transform"
+      type="scale"
+      from="1"
+      to="1.5"
+      dur="1s"
+      repeatCount="indefinite"
+      additive="sum" />
+  </circle>
+</svg>
+
+
+</body>
+</html>
