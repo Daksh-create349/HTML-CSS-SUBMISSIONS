@@ -1,126 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compassionate Care Nursing</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compassionate Care Nursing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
+<header class="navbar">
+    <div class="container nav-container">
+        <div class="logo">
+            <span class="logo-icon">+</span>
+            Compassionate Care
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact" class="btn-primary-small">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+            <h1>Premium In-Home Nursing Care</h1>
+            <p>
+                Professional, compassionate and personalized healthcare
+                delivered safely in the comfort of your home.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">Explore Services</a>
+                <a href="#contact" class="btn btn-secondary">Free Consultation</a>
+            </div>
+
+            <div class="trust-badges">
+                <div>✔ Certified Nurses</div>
+                <div>✔ 24/7 Availability</div>
+                <div>✔ Trusted by 1,200+ Families</div>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=80" alt="Nurse Care">
+            <div class="floating-card">
+                <h4>Emergency Support</h4>
+                <p>Available 24/7</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Our Nursing Services</h2>
+            <p>Comprehensive healthcare solutions tailored to your needs.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-icon">🩺</div>
+                <h3>In-Home Nursing</h3>
+                <p>Skilled professional monitoring and medical care delivered directly to your home.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">❤️</div>
+                <h3>Elderly Care</h3>
+                <p>Dedicated assistance and companionship to maintain independence and dignity.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💊</div>
+                <h3>Post-Surgery Recovery</h3>
+                <p>Medical supervision and rehabilitation support during recovery.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <h2>Experience Compassionate Care Today</h2>
+        <p>Speak to our certified nursing team and schedule your consultation.</p>
+        <a href="#contact" class="btn btn-primary btn-large">Contact Our Team</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-container">
+        <div>
+            <div class="logo logo-light">
                 <span class="logo-icon">+</span>
                 Compassionate Care
             </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Our Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact" class="btn-primary-small">Contact Us</a></li>
-                </ul>
-            </nav>
+            <p>Professional nursing services dedicated to your well-being.</p>
         </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <h1>Dedicated Nursing Care You Can Trust</h1>
-                <p>Providing professional, compassionate, and personalized healthcare services right in the comfort of
-                    your home.</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="btn btn-primary">Explore Services</a>
-                    <a href="#contact" class="btn btn-secondary">Get a Consultation</a>
-                </div>
-            </div>
+        <div>
+            <h3>Quick Links</h3>
+            <p>Home</p>
+            <p>Services</p>
+            <p>About</p>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Nursing Services</h2>
-                <p>Comprehensive healthcare solutions tailored to your individual needs.</p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Service Card 1 -->
-                <div class="service-card">
-                    <div class="service-icon">🩺</div>
-                    <h3>In-Home Nursing</h3>
-                    <p>Skilled nursing care provided in the comfort and familiarity of your own home, ensuring
-                        continuous professional monitoring.</p>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div class="service-card">
-                    <div class="service-icon">❤️</div>
-                    <h3>Elderly Care</h3>
-                    <p>Specialized assistance and companionship for seniors, helping them maintain independence and a
-                        high quality of life.</p>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div class="service-card">
-                    <div class="service-icon">💊</div>
-                    <h3>Post-Surgery Care</h3>
-                    <p>Dedicated medical support and rehabilitation assistance during the critical recovery period
-                        following surgery.</p>
-                </div>
-            </div>
+        <div>
+            <h3>Contact</h3>
+            <p>📞 101</p>
+            <p>✉ info@care.com</p>
         </div>
-    </section>
+    </div>
 
-    <!-- Call to Action -->
-    <section class="cta">
-        <div class="container cta-container">
-            <h2>Ready to experience premium healthcare?</h2>
-            <p>Our team of certified nurses is available 24/7 to answer your questions and provide the care you deserve.
-            </p>
-            <a href="#contact" class="btn btn-primary btn-large">Contact Our Team Today</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <div class="logo logo-light">
-                    <span class="logo-icon">+</span>
-                    Compassionate Care
-                </div>
-                <p>Professional nursing services dedicated to improving your health and well-being.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contact</h3>
-                <p>📍 123 Health Ave, Medical District</p>
-                <p>📞 (555) 123-4567</p>
-                <p>✉️ info@compassionatecare.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Compassionate Care Nursing. All rights reserved.</p>
-        </div>
-    </footer>
+    <div class="footer-bottom">
+        © Made By Daksh Ranjan Srivastava.
+    </div>
+</footer>
 
 </body>
-
 </html>
